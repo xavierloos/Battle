@@ -1,21 +1,23 @@
-require 'sinatra/base'
+require "sinatra/base"
 
 class Battle < Sinatra::Base # Base class for all Sinatra applications and middleware
   enable :sessions
 
-  get '/' do
+  get "/" do
     erb :index
   end
 
-  post '/names' do
+  post "/names" do
     session[:player_1] = params[:player_1]
     session[:player_2] = params[:player_2]
-    redirect to('/play')
+    redirect to("/play")
   end
 
-  get '/play' do
+  get "/play" do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
+    @player_1_points = 100
+    @player_2_points = 100
     erb :play
   end
 
