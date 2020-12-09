@@ -14,8 +14,4 @@ describe "testing players", type: :feature do
     expect(page).to have_content "Harry: 100 points"
     expect(page).to have_content "Hermione: 100 points"
   end
-  scenario "Player 1 attack" do
-    click_button("Attack")
-    expect(page).to have_content "Harry attacked Hermione"
-  end
 end
