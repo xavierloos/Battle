@@ -10,7 +10,6 @@ class Battle < Sinatra::Base # Base class for all Sinatra applications and middl
   post "/names" do
     $player_1 = Player.new(params[:player_1])
     $player_2 = Player.new(params[:player_2])
-
     redirect to("/play")
   end
 
